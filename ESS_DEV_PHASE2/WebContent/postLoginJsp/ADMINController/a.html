@@ -1,0 +1,81 @@
+<link rel="stylesheet" href="postloginresource/jquery-ui.css">
+<script src="postloginresource/jquery-1.10.2.js"></script>
+<script src="postloginresource/jquery-ui.js"></script> 
+
+<script>
+function fnTest(check) {
+
+    if ($(check).is(':checked')) {
+        $(check).siblings('.example:first').find('.child').prop("checked", true);
+    } else {
+        $(check).siblings('.example:first').find('.child').prop("checked", false);
+    }
+}
+
+function submit(check) {
+    var values = [];
+    for (i = 0; i < check.length; i++) {
+        if (check[i].checked == true) {
+            //  alert($(check[i]).value);
+            var test = document.getElementsByTagName("a");
+            alert($(test).text());
+
+            values.push($(test).text());
+        }
+    }
+    // alert(values.eq(0));
+    alert(values.join());
+    //alert(values);
+    //var text[]=values.text();
+    //  alert(text);
+}
+</script>
+
+
+
+
+<ul class="test_ex">
+    <li>
+        <input type="checkbox" id="chckBox" class="parent" onchange="fnTest(this);" /> <a class="ref">Fruits</a>
+
+        <ul class="example">
+            <li>
+                <input type="checkbox" id="chckBox" class="child" /> <a class="ref"> Apple </a>
+
+            </li>
+            <li>
+                <input type="checkbox" id="chckBox" class="child" /> <a class="ref"> Orange </a>
+
+            </li>
+        </ul>
+        <ul class="test_ex_sample">
+            <li>
+                <input type="checkbox" id="chckBox" class="parent" onchange="fnTest(this);" /> <a class="ref">Birds</a>
+
+                <ul class="example">
+                    <li>
+                        <input type="checkbox" id="chckBox" class="child" /> <a class="ref"> Peacock </a>
+
+                    </li>
+                    <li>
+                        <input type="checkbox" id="chckBox" class="child" /> <a class="ref">Parrot </a>
+
+                    </li>
+                </ul>
+                <ul class="example">
+                    <li>
+                        <input type="checkbox" id="chckBox" class="parent" onchange="fnTest(this);" /> <a class="ref"> Food </a>
+
+                        <ul class="example">
+                            <li>
+                                <input type="checkbox" id="chckBox" class="child" /> <a class="ref">Bread </a>
+
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+<input type="button" id="testB" onclick="submit(document.getElementsByTagName('input'))" value="OK" />

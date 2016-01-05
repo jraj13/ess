@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+   "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.custom.i18n.resources" value="ApplicationResources" />
+	<package name="login" extends="struts-default" >
+<result-types>
+        <!-- calling tiles class from tiles framework -->
+            <result-type name="tiles"
+                class="org.apache.struts2.views.tiles.TilesResult" />
+           </result-types>
+           
+        <!-- calling Interceptors  -->
+           <interceptors>
+			 <interceptor-stack name="checkInterceptorStack">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="exception" />
+			</interceptor-stack>
+		</interceptors>
+		
+        <!-- Login Action for post login page(home) -->
+		<action name="login" class="com.ess.common.action.LoginAction" method="login">
+			<result name="error">/</result>
+			<result name="admin">/postLoginJsp/postlogin1.jsp</result>
+			<result name="hr">/postLoginJsp/postlogin1.jsp</result>
+			<result name="employee">/postLoginJsp/postlogin1.jsp</result>
+			<result name="manager">/postLoginJsp/postlogin1.jsp</result>
+			<result name="sanctioning_authority">/postLoginJsp/postlogin1.jsp</result> 
+			<result name="accountant">/postLoginJsp/postlogin1.jsp</result> 
+			<result name="INPUT">/jsp/eroor_page.jsp</result> 
+		</action>
+		
+		<!-- Logout Action -->
+		<action name="logout" class="com.ess.common.action.LoginAction" method="logout">
+			<result name="success">/jsp/home2.jsp</result>
+			<!-- <result name="error">/postLoginJsp/postlogin1.jsp</result> -->
+			<result name="error">/jsp/home2.jsp</result>
+		</action>
+		
+		<!-- home Action for get back postlogin page -->
+		<action name="home" class="com.ess.common.action.LoginAction" method="home">
+			<result name="success">/postLoginJsp/postlogin1.jsp</result>
+		</action>
+		
+		<action name="expire_password" class="com.ess.common.action.Password_expired" method="password_expired_change">
+			<result name="SUCCESS">/jsp/home2.jsp</result>
+			<result name="ERROR">/jsp/eroor_page.jsp</result>
+   		</action>
+   		
+		<action name="support" class="com.ess.common.action.LoginAction" method="home">
+			<!-- <result name="success">/postLoginJsp/postlogin1.jsp</result> -->
+			<result name="success">/postLoginJsp/PI/support_initial.jsp</result>
+			
+		</action>
+		
+		<action name="helpdesk" class="com.ess.common.action.HelpDeskAction" method="helpdesk">
+	 <!-- <result name="success">/postLoginJsp/postlogin1.jsp</result> -->
+		<result name="hr">/postLoginJsp/PI/support_initial.jsp</result>
+			<result name="error">/postLoginJsp/postlogin1.jsp</result> 
+		</action>
+		
+		
+		<action name="helpdesk1" class="com.ess.common.action.HelpDeskAction" method="helpdesk1">
+			 <result name="success">/postLoginJsp/postlogin1.jsp</result> 
+			 <result name="hr">/postLoginJsp/postlogin1.jsp</result>
+			 <result name="error">/postLoginJsp/PI/support_initial.jsp</result> 
+		</action>
+		
+		<!-- <action name="userImage" class="com.servlet.Upload_files" method="upload_file_database">
+  	 		 <result name="success">/postLoginJsp/postlogin1.jsp</result>
+		</action> -->
+		
+		<action name="Hrhome" class="com.ess.common.action.LoginAction" method="hrhome">
+			<result name="success">/postLoginJsp/postlogin1.jsp</result>
+		</action>
+		<action name="Adminhome" class="com.ess.common.action.LoginAction" method="adminhome">
+			<result name="success">/postLoginJsp/adminpostlogin.jsp</result>
+		</action>
+		<action name="Managerhome" class="com.ess.common.action.LoginAction" method="managerhome">
+			<result name="success">/postLoginJsp/managerpostlogin.jsp</result>
+		</action>
+		
+		<action name="regsuccess" class="com.ess.common.action.RegistrationAction" method="regsuccess">
+			<result name="error">/</result>
+			<result name="success">/postLoginJsp/ADMINController/registersuccess.jsp</result>
+		</action>
+		
+		
+		<!-- Personal Menu  Action -->
+		<action name="personlaMenuAction" class="com.ess.common.action.EmployeeDetailsPersonal" method="personlMenu">
+			<result name="error">/</result>
+			<result name="success">/postLoginJsp/PI/personalinfo_menu.jsp</result>
+		</action>
+		<!-- <action name="Personal_Info" class="com.ess.common.action.PersonalInfoAction" method="personalInfo">
+			<result name="error">/</result>
+			<result name="success"></result>
+		</action>
+		 -->
+		<action name="Personal_profile" class="com.ess.common.action.PersonalInfoAction" method="personalProfile">
+			<result name="error">/</result>
+			<result name="success">/postLoginJsp/PI/personalProfile.jsp</result>
+		</action>
+		<action name="Personal_qualification" class="com.ess.common.action.PersonalInfoAction" method="qualification">
+			<result name="error">/</result>
+			<result name="success">/postLoginJsp/PI/qualification.jsp</result>
+		</action>
+		<action name="Previous_emp" class="com.ess.common.action.PersonalInfoAction" method="previousEmp">
+			<result name="error">/</result>
+			<result name="success">/postLoginJsp/PI/previousEmployer.jsp</result>
+		</action>
+		<action name="Emp_nominations" class="com.ess.common.action.PersonalInfoAction" method="navigation">
+			<result name="error">/</result>
+			<result name="success">/postLoginJsp/PI/nominations.jsp</result>
+		</action>
+		<action name="pan_retailers" class="com.ess.common.action.PersonalInfoAction" method="panorReatailer">
+			<result name="error">/</result>
+			<result name="success">/postLoginJsp/PI/panRetrials.jsp</result>
+		</action>
+		
+		<action name="QualificationUpdate" class="com.ess.common.action.EmployeeDetailsPersonal" method="qualificationUpdate">
+			<result name="success">/postLoginJsp/postlogin1.jsp</result>
+		</action> 
+		
+		<action name="PreviousEmployerUpdate" class="com.ess.common.action.EmployeeDetailsPersonal" method="previousEmployerUpdate">
+			<result name="success">/postLoginJsp/postlogin1.jsp</result>
+		</action> 
+		
+		<action name="NominiesUpdate" class="com.ess.common.action.EmployeeDetailsPersonal" method="nominiUpdate">
+			<result name="success">/postLoginJsp/postlogin1.jsp</result>
+		</action>
+		
+		<action name="PayslipConfigUpdate" class="com.ess.common.action.PayslipAction" method="payslipCofigUpdate">
+			<result name="success">/postLoginJsp/postlogin1.jsp</result>
+		</action>
+	
+		<action name="pdf_dynamic" class="com.servlet.PDFGenerator">
+  		 </action>  
+	
+		<action name="pdf_due_clerance" class="com.servlet.PDF_Generation_DueClearance">
+ 		  </action>
+
+
+		<action name="pdf_e_voucher" class="com.servlet.Cash_Voucher_pdf_generation" method="e_voucher_reports">
+   		</action>
+
+		
+		<action name="voucher_report" class="com.servlet.Voucher">
+			<result name="success">/postLoginJsp/postlogin1.jsp</result>
+		</action>
+		
+		
+		<action name="datebased" class="com.servlet.Daterange_Expense_Report" method="report_date_basis">
+			<result name="success">/postLoginJsp/postlogin1.jsp</result>
+		</action>
+		
+		<action name="monthbased" class="com.servlet.Monthly_Expenses_Reports" method="month_year_basis">
+			<result name="success">/postLoginJsp/postlogin1.jsp</result>
+		</action>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<!-- END Personal Information Action Mapping-->
+		
+		<!-- Employee Attendance/Leave  Action Mapping -->
+		<action name="attandenceMenuAction" class="com.ess.common.action.AttendanceDetails" method="attandenceMenu">
+			<result name="error">/</result>
+			<result name="success">/postLoginJsp/ATND/atnd_menu.jsp</result>
+		</action>
+		
+		<action name="WorkingTime" class="com.ess.common.action.AttendanceLeaveMenuAction" method="workingTime">
+			<result name="success">/postLoginJsp/ATND/worktime.jsp</result>
+	    </action>
+	
+	    <action name="AttendanceQuery" class="com.ess.common.action.AttendanceLeaveMenuAction" method="attendanceQuery">
+			<result name="success">/postLoginJsp/ATND/attendancequery.jsp</result>
+	    </action>
+	    <!-- <action name="Attendancequery_success" class="com.ess.common.action.AttendanceLeaveMenuAction" method="attendanceQuery_success">
+			<result name="success" type="tiles">/attendancequery_success.tiles</result>
+	    </action> -->
+	
+	
+	    <action name="LeaveOverview" class="com.ess.common.action.AttendanceLeaveMenuAction" method="leaveOverveiw">
+			<result name="success">/postLoginJsp/ATND/leaverequest.jsp</result>
+	    </action>
+	
+	    <action name="LeaveEnhancement" class="com.ess.common.action.AttendanceLeaveMenuAction" method="leaveEnhancement">
+			<result name="success">/postLoginJsp/ATND/leaveEncashment.jsp</result>
+	   </action>
+	
+	   <action name="PaidHolidayCalendar" class="com.ess.common.action.AttendanceLeaveMenuAction" method="paidHoliday">
+			<result name="success">postLoginJsp/ATND/publicholiday.jsp</result>
+	  </action>
+		<!-- END Attendance/Leave Information Action Mapping-->
+		
+	<!-- 	ATTENDANCE REPORT ACTION MAPPING  -->
+		<action name="dummy" class="com.ess.common.action.SesAction" method="down">
+			<result name="success">postLoginJsp/ADMINController/AttReportBetween.jsp</result>
+	  </action>
+	  
+	  <action name="month" class="com.ess.common.action.SesAction" method="month">
+			<result name="success">postLoginJsp/ADMINController/AttReportMonth.jsp</result>
+	  </action>
+	  
+	  <action name="each_emp" class="com.ess.common.action.SesAction" method="each_emp">
+			<result name="success">postLoginJsp/ADMINController/AttReportEachemp.jsp</result>
+	  </action>
+	  
+	  
+	</package>
+	
+</struts>

@@ -1,0 +1,79 @@
+@charset "utf-8";
+/* CSS Document */
+
+body, html, input, textarea, select{ font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; font-size:14px;}
+body{ margin:20px 20px 40px 20px;}
+h1, h2, h3, h4, h5, h6{ color:#0D2B44; font-family:Georgia, "Times New Roman", Times, serif; font-smooth:always; font-weight:lighter; text-shadow:1px 1px 1px #B7B9B9;}
+h1{ margin-top:40px;}
+a{ color:#34709F; text-decoration:none;}
+a:hover{ text-decoration:underline;}
+img{ border:none;}
+em{ color:#666;}
+body > em:first-child{ display:block; position:absolute; top:10px; right:20px; padding-left:20px;}
+
+.title{ overflow:hidden; margin:40px 0px 10px 0px;}
+.title h2{ display:block; float:left; margin:0px 0px;}
+.title a{ display:block; float:left; margin:6px 0px 0px 10px;}
+
+input[type='button'], input[type='submit']{ color:#FFF; text-shadow:1px 1px 2px #D25400; border:solid 2px #FF8602; background-image:url(../images/button_background.gif); background-repeat:repeat-x; padding:5px 8px; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px; -moz-box-shadow:1px 1px 2px #B7B9B9; -webkit-box-shadow:1px 1px 2px #B7B9B9; box-shadow:1px 1px 2px #B7B9B9;}
+
+pre{ background-color:#DFE1E6; padding:3px 3px; display:none;}
+code{ border:solid 1px #A4CABC; display:block; background-color:#FFF;}
+
+.message{ display:none; margin:10px 0px 0px 0px; padding:10px 10px; background-color:#F0F0F0; border:solid 1px #A4CABC;}
+
+dl{ margin-left:20px;}
+dl dt tt{ font-family:Georgia, "Times New Roman", Times, serif; font-weight:bold;}
+dl dd{ margin-left:20px;}
+dl dl dd{ margin-left:40px;}
+
+/* Accordion */
+.accordion{ clear:both;}
+.accordion .toggler{ width:100%; height:36px; margin-top:10px; border:solid 1px #B2C4CE; background-color:#EFF7FA; position:relative; overflow:hidden; -moz-border-radius-topleft:5px; -webkit-border-top-left-radius:5px; -moz-border-radius-topright:5px; -webkit-border-top-right-radius:5px;}
+.accordion .toggler:hover{ background-color:#E8EBEE;}
+.accordion .toggler div.icon{ position:relative; float:left; border-right:solid 1px #B2C4CE; height:28px; padding:8px 8px 0 8px; cursor:pointer;}
+.accordion .toggler div.title{ position:relative; float:left; height:26px; padding:10px 12px 0 12px;}
+.accordion .toggler div.titleRight{ position:relative; float:right; padding:10px 12px 0 12px;}
+.accordion .container{ display:none; background-color:#FFF; padding:0 0; border:solid 1px #B2C4CE; width:100%; border-top:none; margin-bottom:10px; -moz-border-radius-bottomleft:5px; -webkit-border-bottom-left-radius:5px; -moz-border-radius-bottomright:5px; -webkit-border-bottom-right-radius:5px;}
+.accordion .container ul{ margin:0 0;}
+.accordion .container_loading{ padding:10px 10px 10px 10px;}
+.accordion h3{ margin:0 0px 0 0px; padding:0 20px 0 20px;}
+.accordion p{ padding:0 20px 0 20px; margin-top:0;}
+
+/* Expand and collapse menu */
+.accordionControl{ list-style:none; float:right; clear:both; overflow:hidden; padding-left:0; margin:0 0 10px 0; border:solid 1px #B2C4CE; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}
+.accordionControl li{ float:left;}
+.accordionControl li:first-child{ border-right:solid 1px #B2C4CE;}
+.accordionControl li a{ display:block; padding:4px 6px;}
+
+/* Extra styling */
+.accordion .container p{ padding-top:10px;}
+.accordion .container > img{ display:block; -moz-border-radius-bottomleft:5px; -webkit-border-bottom-left-radius:5px; border-bottom-left-radius:5px; -moz-border-radius-bottomright:5px; -webkit-border-bottom-right-radius:5px; border-bottom-right-radius:5px;}
+.accordion .container table{ width:100%; margin:0;}
+.accordion .container table td, .accordion .container table th{ height:20px; padding:8px 8px; border-bottom:solid 1px #DAE4E9; border-right:solid 1px #DAE4E9;}
+.accordion .container table th{ background-color:#EBF0F3; font-weight:lighter;}
+.accordion .container table tr td:last-child, .accordion .container table tr th:last-child{ border-right:none;}
+.accordion .container table tbody tr:nth-child(even) td{ background-color:#EFF7FA; selector:.accordion .container table tbody tr:nth-child(even) td;} /* Do you want to know what the property selector is for? Go to http://www.darlesson.com/jquery/css3-selectors-for-internet-explorer/ */
+.accordion .container table tbody tr:hover{ background-color:#E8EBEE;}
+
+/* Menu */
+#menu{ width:220px; background-color:#EBF0F3; padding:3px 3px; -moz-border-radius:6px; -webkit-border-radius:6px; border-radius:6px;}
+#menu ul{ list-style:none; margin:0 0; padding:0 0;}
+#menu li{ padding:0 0;}
+#menu > ul{ border:1px solid #B2C4CE; background-color:#B2C4CE; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px;}
+#menu .submenu{ background-color:#FFF;}
+#menu .toggler{ width:100%; height:36px; border-top:solid 1px #B2C4CE; background-color:#EFF7FA; position:relative; overflow:hidden; cursor:pointer;}
+#menu .toggler div.icon{ position:relative; float:right; height:28px; padding:8px 8px 0 8px;}
+#menu .toggler div.title{ position:relative; float:left; height:26px; padding:10px 12px 0 12px; margin:0 0;}
+#menu .submenu:first-child{ -moz-border-radius-topleft:5px; -webkit-border-top-left-radius:5px; border-top-left-radius:5px; -moz-border-radius-topright:5px; -webkit-border-top-right-radius:5px; border-top-right-radius:5px;}
+#menu .submenu:first-child .toggler{ border-top:none; -moz-border-radius-topleft:5px; -webkit-border-top-left-radius:5px; border-top-left-radius:5px; -moz-border-radius-topright:5px; -webkit-border-top-right-radius:5px; border-top-right-radius:5px;}
+#menu .submenu:last-child, #menu .submenu:last-child .toggler{ -moz-border-radius-bottomleft:5px; -webkit-border-bottom-left-radius:5px; border-bottom-left-radius:5px; -moz-border-radius-bottomright:5px; -webkit-border-bottom-right-radius:5px; border-bottom-right-radius:5px;}
+#menu .container{ display:none; border-top:solid 1px #B2C4CE;}
+#menu .container a{ display:block; padding:4px 10px; border-bottom:1px solid #DAE4E9;}
+#menu .container a:hover{ background-color:#EBF0F3;}
+#menu .container li:last-child a{ border-bottom:none;}
+
+
+
+
+

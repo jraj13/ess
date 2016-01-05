@@ -1,0 +1,40 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+
+form{   background-color: #376e9c;
+
+    box-shadow: 1px 0 21px 12px #afafaf;
+    color: #fff;
+    margin: 0 18px;
+    padding: 9px 0 1px 9px;
+	border:none;
+	
+	                                         
+	}
+	
+	.box-heading{     background-color: #376e9c;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 3% 0;
+    text-align: center;}
+	
+	
+			@media (min-width:250px) and (max-width:450px) {		
+		.carousel-caption p{
+			height:41px;
+			font-size:9px;}}
+			
+				@media (min-width:480px) and (max-width:767px) {		
+		.carousel-caption p{
+			height:80px;
+			font-size:12px;}}
+			
+	@media (min-width:768px) and (max-width:900px) {		
+		.carousel-caption p{
+			height:10%;
+			font-size:12px;}}
+			
+			footer{ font-size:10px;}

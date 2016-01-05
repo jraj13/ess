@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+      "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+      "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+    <!-- individual tiles of header,body,menu and footer Tiles merging into base layout -->
+<tiles-definitions>
+   <definition name="baseLayout" template="/jsp/layout.jsp">
+       <put-attribute name="title" value="" />
+       <put-attribute name="header" value="/jsp/header.jsp" />
+       <put-attribute name="menu" value="/jsp/menu.jsp" />
+       <put-attribute name="body" value="" />
+       <put-attribute name="footer" value="/jsp/footer.jsp" />
+  </definition>
+  <!-- Mergeing header,footer,body and menu pages into welcome tiles -->
+   <definition name="/welcome.tiles" extends="baseLayout">
+       <put-attribute name="title" value="Welcome page" />
+       <put-attribute name="body" value="/jsp/body.jsp" />
+   </definition>
+   
+   <!-- EMployee Registration Information Tiles -->
+   
+   <definition name="/registration.tiles" extends="baseLayout" template="/jsp/registration.jsp">
+       <put-attribute name="title" value="Registration page" />
+      
+   </definition>
+   
+   <definition name="/regsuccess.tiles" extends="baseLayout" template="/jsp/registersuccess.jsp">
+       <put-attribute name="title" value="Registration success page" />
+   </definition>
+    <!--END EMployee Registration Information Tiles -->
+   
+   <!-- EMployee Personal Information Tiles -->
+    <definition name="/personalinfomenu.tiles" extends="baseLayout" template="/jsp/personalinfo_menu.jsp">
+       <put-attribute name="title" value="personalinfo success page" />
+    </definition>
+    
+    <definition name="/personalinfo.tiles" extends="baseLayout" template="/jsp/personalinfo.jsp">
+       <put-attribute name="title" value="personalinfosub success page" />
+     </definition>
+     
+   <definition name="/personalprofile.tiles" extends="baseLayout" template="/jsp/personalprofile.jsp">
+       <put-attribute name="title" value="personalprofile success page" />
+   </definition>
+   
+   <definition name="/personalqualification.tiles" extends="baseLayout" template="/jsp/personalqualification.jsp">
+       <put-attribute name="title" value="personalinfosub success page" />
+   </definition>
+   
+   <definition name="/previousemp.tiles" extends="baseLayout" template="/jsp/previousemp.jsp">
+       <put-attribute name="title" value="personalinfosub success page" />
+   </definition>
+   
+   <definition name="/nomination.tiles" extends="baseLayout" template="/jsp/namination.jsp">
+       <put-attribute name="title" value="personalinfosub success page" />
+   </definition>
+   
+   <definition name="/panorretailers.tiles" extends="baseLayout" template="/jsp/panorretailers.jsp">
+       <put-attribute name="title" value="personalinfosub success page" />
+   </definition>
+   
+   <!-- END Employee Personal Information Tiles -->
+   
+ <!-- EMployee Attendance Information Tiles -->
+   <definition name="/attendance_leave_menu.tiles" extends="baseLayout" template="/jsp/attendance_leave_menu.jsp">
+       <put-attribute name="title" value="Attendance leave success page" />
+   </definition>
+ 
+    <definition name="/workingtime.tiles" extends="baseLayout" template="/jsp/working_time.jsp">  
+       <put-attribute name="title" value="working time page" />
+    </definition>
+    
+    <definition name="/attendancequery.tiles" extends="baseLayout" template="/jsp/attendance_query.jsp">  
+       <put-attribute name="title" value="attendance query page" />
+    </definition>
+     <definition name="/attendancequery_success.tiles" extends="baseLayout" template="/jsp/attendance_query_success.jsp">  
+       <put-attribute name="title" value="attendance query success page" />
+    </definition>
+    
+    
+    <definition name="/leaveoverview.tiles" extends="baseLayout" template="/jsp/leave_overview.jsp">  
+       <put-attribute name="title" value="leave overview page" />
+    </definition>
+ 
+ 	<definition name="/leaveenhancement.tiles" extends="baseLayout" template="/jsp/leave_enhancement.jsp">  
+       <put-attribute name="title" value="leave inhancement page" />
+    </definition>
+    
+    <definition name="/paidholidaycalendar.tiles" extends="baseLayout" template="/jsp/paid_holiday_calendar.jsp">  
+       <put-attribute name="title" value="paid holiday calendar page" />
+    </definition>
+ 
+ <!-- END Attendance Information Tiles -->
+</tiles-definitions>
+

@@ -1,0 +1,212 @@
+
+<SCRIPT TYPE="text/javascript">
+  var count = "1";
+  function addRow(in_tbl_name)
+  {
+    var tbody = document.getElementById(in_tbl_name).getElementsByTagName("TBODY")[0];
+    // create row
+    var row = document.createElement("TR");
+    // create table cell 1
+   /*  var td1 = document.createElement("TD")
+    var strHtml1 = "<FONT SIZE=\"+3\">*</FONT>";
+    td1.innerHTML = strHtml1.replace(/!count!/g,count); */
+    // create table cell 2
+    var td2 = document.createElement("TD")
+    var strHtml2 = "<SELECT NAME=\"Claim Type\"><OPTION VALUE=\"CHILDREN EDUCATION EXPENSES\">CHILDREN EDUCATION EXPENSES<OPTION VALUE=\"FUEL AND MAINTENANCE EXPENSES\">FUEL AND MAINTENANCE EXPENSES   <OPTION VALUE=\"CHILDREN HOSTEL EXPENSE\">CHILDREN HOSTEL EXPENSE  <OPTION VALUE=\"MEDICAL EXPENSES\">MEDICAL EXPENSES  <OPTION VALUE=\"OWA EXPENSES\">OWA EXPENSES  <OPTION VALUE=\"OWA MAINTENANCE **\">OWA MAINTENANCE **</SELECT>";
+    td2.innerHTML = strHtml2.replace(/!count!/g,count);
+    // create table cell 3
+    var td3 = document.createElement("TD")
+    var strHtml3 = "<INPUT TYPE=\"text\" NAME=\"bill_num\" SIZE=\"30\" MAXLENGTH=\"30\"  STYLE=\"height:24;border: 1 solid;margin:0;\">";
+    td3.innerHTML = strHtml3.replace(/!count!/g,count);
+    // create table cell 4
+    var td4 = document.createElement("TD")
+    var strHtml4 = "<INPUT TYPE=\"date\" NAME=\"bill_date\" SIZE=\"5\" MAXLENGTH=\"5\"  STYLE=\"height:24;border: 1 solid;margin:0;\">";
+    td4.innerHTML = strHtml4.replace(/!count!/g,count);
+    // create table cell 5
+    var td5 = document.createElement("TD")
+    var strHtml5 = "<INPUT TYPE=\"text\" NAME=\"eamnt\" SIZE=\"30\" MAXLENGTH=\"5\"  STYLE=\"height:24;border: 1 solid;margin:0;\" >";
+    td5.innerHTML = strHtml5.replace(/!count!/g,count);
+    // create table cell 6
+    var td6 = document.createElement("TD")
+    var strHtml6 = "<INPUT TYPE=\"text\" NAME=\"remarks\" SIZE=\"30\" MAXLENGTH=\"5\"  STYLE=\"height:24;border: 1 solid;margin:0;\" >";
+    td6.innerHTML = strHtml6.replace(/!count!/g,count);
+    // create table cell 7
+    var td7 = document.createElement("TD")
+    var strHtml7 = "<INPUT TYPE=\"Button\" CLASS=\"Button\" onClick=\"delRow()\" VALUE=\"Delete Row\">";
+    td7.innerHTML = strHtml7.replace(/!count!/g,count);
+    // append data to row
+  /*   row.appendChild(td1); */
+    row.appendChild(td2);
+    row.appendChild(td3);
+    row.appendChild(td4);
+    row.appendChild(td5);
+    row.appendChild(td6);
+    row.appendChild(td7);
+    // add to count variable
+    count = parseInt(count) + 1;
+    // append row to table
+    tbody.appendChild(row);
+  }
+  function delRow()
+  {
+    var current = window.event.srcElement;
+    //here we will delete the line
+    while ( (current = current.parentElement)  && current.tagName !="TR");
+         current.parentElement.removeChild(current);
+  }
+</SCRIPT>
+<form>
+<TABLE ID="tblPets" border="1" STYLE="border width:1 orange dashed;background color:#F0E68C;table-row width:2;">
+<TR><!-- <TH>Rownum</TH> --> 
+	<th>Claim Type</th>
+    <th>Bill No</th>
+    <th>Bill Date</th>
+    <th>Expense Amount</th>
+     <th>Remarks</th>
+     <!-- <th ALIGN="center"><INPUT TYPE="Button" onClick="addRow('tblPets')" VALUE="Add Row"></th> -->
+     <th ALIGN="center">&nbsp;</th>
+     </TR>
+
+<TR><!-- <td>1</td> -->
+<td class="headind_1"><select name="ctype" id="ctype" style="background-color: white;color:black; width:100.5%;height:112%">
+									<option value="none selected">SELECT CLAIM TYPE</option>
+									<option value="CHILDREN EDUCATION EXPENSES">CHILDREN EDUCATION EXPENSES</option>
+									<option value="FUEL AND MAINTENANCE EXPENSES">FUEL AND MAINTENANCE EXPENSES</option>
+									<option value="CHILDREN HOSTEL EXPENSE">CHILDREN HOSTEL EXPENSE</option>
+									<option value="MEDICAL EXPENSES">MEDICAL EXPENSES</option>
+									<option value="OWA EXPENSES">OWA EXPENSES</option>
+									<option value="OWA MAINTENANCE **">OWA MAINTENANCE **</option>
+							</select></td>
+    <td class="headind_1"><input type="text" name="bill_num" id="bill_num" style="background-color: white;border:0px;" value="" ></input></td>
+    <td><input type="date" name="bill_date" id="bill_date" style="background-color: white;border:0px;" value=""></input></td>
+    <td class="headind_1"><input type="text" name="eamnt" id="eamnt" style="background-color: white;border:0px;" value="" onkeypress="return isamt(event)"></input></td>
+  <td><input type="text" name="remarks" id="remarks" style="background-color: white;border:0px;" value=""></input></td>
+    <td> <INPUT TYPE="Button" CLASS="Button" onClick="delRow()" VALUE="Delete Row"></TD></TR>
+
+</TABLE>
+
+<center><INPUT TYPE="Button" onClick="addRow('tblPets')" VALUE="Add Row">
+<input id="clear" type="RESET"  value="Clear"></input></center>
+
+</form>
+
+
+
+
+
+<!-- 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script><script type="text/javascript">
+var rowCount = 1; function addMoreRows(frm) { rowCount ++; var recRow = '<p id="rowCount'+rowCount+'"><tr>
+<td class="headind_1"><select name="ctype" id="ctype" style="background-color: white;color:black; width:100.5%;height:112%"><option value="none selected">SELECT CLAIM TYPE</option><option value="CHILDREN EDUCATION EXPENSES">CHILDREN EDUCATION EXPENSES</option><option value="FUEL AND MAINTENANCE EXPENSES">FUEL AND MAINTENANCE EXPENSES</option><option value="CHILDREN HOSTEL EXPENSE">CHILDREN HOSTEL EXPENSE</option><option value="MEDICAL EXPENSES">MEDICAL EXPENSES</option>
+<option value="OWA EXPENSES">OWA EXPENSES</option><option value="OWA MAINTENANCE **">OWA MAINTENANCE **</option></select></td>
+ <td class="headind_1"><input type="text" name="bill_num" id="bill_num" style="background-color: white;border:0px; margin: 4px 5px 0 5px;" value="" ></input></td><td>  <td><input type="date" name="bill_date" id="bill_date" style="background-color: white;border:0px; margin: 4px 10px 0 0px;" value=""></input></td> <td class="headind_1"><input type="text" name="eamnt" id="eamnt" style="background-color: white;border:0px;" value="" onkeypress="return isamt(event)"></input></td></tr> <a href="javascript:void(0);" onclick="removeRow('+rowCount+');">Delete</a></p>'; jQuery('#addedRows').append(recRow); } function removeRow(removeNum) { jQuery('#rowCount'+removeNum).remove(); } </script> 
+
+<table rules="all" style="background:#fff;"> 
+<tr> 
+  <th>Claim Type</th>
+    <th>Bill No</th>
+    <th>Bill Date</th>
+    <th>Expense Amount</th>
+     <th>Remarks</th>
+</tr> 
+<tr id="rowId">
+<td class="headind_1"><select name="ctype" id="ctype" style="background-color: white;color:black; width:100.5%;height:112%">
+									<option value="none selected">SELECT CLAIM TYPE</option>
+									<option value="CHILDREN EDUCATION EXPENSES">CHILDREN EDUCATION EXPENSES</option>
+									<option value="FUEL AND MAINTENANCE EXPENSES">FUEL AND MAINTENANCE EXPENSES</option>
+									<option value="CHILDREN HOSTEL EXPENSE">CHILDREN HOSTEL EXPENSE</option>
+									<option value="MEDICAL EXPENSES">MEDICAL EXPENSES</option>
+									<option value="OWA EXPENSES">OWA EXPENSES</option>
+									<option value="OWA MAINTENANCE **">OWA MAINTENANCE **</option>
+							</select></td>
+    <td class="headind_1"><input type="text" name="bill_num" id="bill_num" style="background-color: white;border:0px;" value="" ></input></td>
+    <td><input type="date" name="bill_date" id="bill_date" style="background-color: white;border:0px;" value=""></input></td>
+    <td class="headind_1"><input type="text" name="eamnt" id="eamnt" style="background-color: white;border:0px;" value="" onkeypress="return isamt(event)"></input></td>
+</table>
+<div id="addedRows"></div>
+</td> </tr>
+<span style="font:normal 12px agency, arial; color:blue; text-decoration:underline; cursor:pointer;" onclick="addMoreRows(this.form);"> Add More </span>
+
+
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <HTML>
+<HEAD>
+     <TITLE> Add/Remove dynamic rows IN HTML table </TITLE>
+     <SCRIPT language="javascript">
+          FUNCTION addRow(tableID) {
+ 
+               VAR table = document.getElementById(tableID);
+ 
+               VAR rowCount = table.rows.length;
+               VAR row = table.insertRow(rowCount);
+ 
+               VAR cell1 = row.insertCell(0);
+               VAR element1 = document.createElement("input");
+               element1.type = "checkbox";
+               cell1.appendChild(element1);
+ 
+               VAR cell2 = row.insertCell(1);
+               cell2.innerHTML = rowCount + 1;
+ 
+               VAR cell3 = row.insertCell(2);
+               VAR element2 = document.createElement("input");
+               element2.type = "text";
+               cell3.appendChild(element2);
+ 
+          }
+ 
+          FUNCTION deleteRow(tableID) {
+               TRY {
+               VAR table = document.getElementById(tableID);
+               VAR rowCount = table.rows.length;
+ 
+               FOR(VAR i=0; i<rowCount; i++) {
+                    VAR row = table.rows[i];
+                    VAR chkbox = row.cells[0].childNodes[0];
+                    IF(NULL != chkbox && TRUE == chkbox.checked) {
+                         table.deleteRow(i);
+                         rowCount--;
+                         i--;
+                    }
+ 
+               }
+               }CATCH(e) {
+                    ALERT(e);
+               }
+          }
+ 
+     </SCRIPT>
+</HEAD>
+<BODY>
+ 
+     <INPUT type="button" value="Add Row" onclick="addRow('dataTable')" />
+ 
+     <INPUT type="button" value="Delete Row" onclick="deleteRow('dataTable')" />
+ 
+     <TABLE id="dataTable" width="350px" border="1">
+          <TR>
+               <TD><INPUT type="checkbox" NAME="chk"/></TD>
+               <TD> 1 </TD>
+               <TD> <INPUT type="text" /> </TD>
+          </TR>
+     </TABLE>
+ 
+</BODY>
+</HTML>
+  -->

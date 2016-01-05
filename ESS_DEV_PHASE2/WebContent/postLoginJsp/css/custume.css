@@ -1,0 +1,17 @@
+@charset "utf-8";
+
+/* CSS Document */
+
+.custum{ background:#fff; color:#000; }
+body{ color:#fff;
+line-height:25px;}
+
+
+.custume_1 { background:#376E9C;  box-shadow: 0 0 40px 1px #afafaf; }
+.custume_1 td{ padding:2px 2px;   padding: 0.5% 0.8%;}
+.custume_2 td{
+	 padding:2px 2px;   padding: 0.5% 0.8%;
+	 background:#376E9C;
+	}
+	p{ padding:10px 20px;}
+	.accord{ background: #376E9C;  box-shadow: 0 0 40px 1px #afafaf; }

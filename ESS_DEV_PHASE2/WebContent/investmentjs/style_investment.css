@@ -1,0 +1,124 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+	font: Arial, Helvetica, sans-serif;
+}
+
+.main {
+	border: 2px solid #a2c4ea;
+	margin: 0 auto;
+	width: 900px;
+}
+
+.table-container {
+	background-color: #dfecf5;
+	margin: 0 1%;
+	width: 80%;
+}
+
+h4 {
+	background-color: #dfecf5;
+	border-bottom: 2px solid #4289bc;
+	margin-top: 0;
+	padding: 5px 4px;
+	text-align: left;
+}
+
+h3 {
+	background-color: #c4d9ed;
+	border: 1px solid;
+	font-size: 16px;
+	margin-top: -11px;
+	padding: 5px;
+	text-align: left;
+}
+
+h6 {
+	font-size: 16px;
+	margin: 16px 13px;;
+	text-align: left;
+	font-weight: normal;
+}
+
+.container {
+	background-color: #fff;
+	margin: 0 1%;
+	width: 50%;
+}
+
+table caption {
+	background-color: #98c3e2;
+	padding: 5px 2%;
+	text-align: left;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table, td, th {
+	border: 1px solid black;
+	text-align: center;
+	line-height: 26px;
+}
+
+.headind {
+	background-color: #D8D9E0;
+}
+
+.headind_1 {
+	background-color: #E2BC72;
+}
+
+td:first-child {
+	background-color: #D8D9E0;
+}
+
+.box-value {
+	background-color: red;
+}
+
+.box-value_1 {
+	background-color: green;
+}
+
+.listdata-1 {b
+	
+}
+
+.listdata-1 ul {
+	background: none repeat scroll 0 0 green;
+	margin: 0 3%;
+	padding: 1%;
+}
+
+.listdata-1 li {
+	display: inline;
+	margin: 0 3%;
+	padding: 1%;
+}
+
+.listdata ul {
+	width: 935px;
+}
+
+.listdata-1 li input[type="text"] {
+	background-color: yellow;
+	width: 148px;
+}
+
+.listdata li {
+	background: none repeat scroll 0 0 green;
+	display: inline;
+	margin: 0 3%;
+	padding: 1%;
+}
+
+.listdata li input[type="text"] {
+	background-color: yellow;
+	width: 122px;
+}
+
+.data_box {
+	border: 2px solid green;
+}
